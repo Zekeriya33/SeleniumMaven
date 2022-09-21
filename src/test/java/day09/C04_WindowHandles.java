@@ -61,5 +61,6 @@ public class C04_WindowHandles {
         driver.switchTo().window(windowList.get(0));
         Assert.assertEquals("The Internet",driver.getTitle());
 
+
     }
 }
