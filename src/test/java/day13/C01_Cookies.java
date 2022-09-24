@@ -51,20 +51,20 @@ public class C01_Cookies extends TestBaseBeforeAfter {
         driver.manage().addCookie(yeniCookie);
         tumCookie = driver.manage().getCookies();
         //  System.out.println(tumCookie);
-        int sayac1 = 1;
+         sayac = 1;
         for (Cookie each : tumCookie
         ) {
-            System.out.println(sayac1 + ". cookie :" + each);
-            System.out.println(sayac1 + ". name :" + each.getName());
-            System.out.println(sayac1 + ". value :" + each.getValue());
-            sayac1++;
+            System.out.println(sayac + ". cookie :" + each);
+            System.out.println(sayac + ". name :" + each.getName());
+            System.out.println(sayac + ". value :" + each.getValue());
+            sayac++;
 
 
             //    6-eklediginiz cookie’nin sayfaya eklendigini test edin
             Assert.assertTrue(tumCookie.contains(yeniCookie));
             //    7-ismi skin olan cookie’yi silin ve silindigini test edin
-            driver.manage().deleteCookieNamed("skin");
-            Assert.assertFalse(tumCookie.contains("skin"));
+             Cookie isim = driver.manage().getCookieNamed("skin");
+            Assert.assertFalse(tumCookie.contains(isim));
             //    8-tum cookie’leri silin ve silindigini test edin
             driver.manage().deleteAllCookies();
             tumCookie= driver.manage().getCookies();

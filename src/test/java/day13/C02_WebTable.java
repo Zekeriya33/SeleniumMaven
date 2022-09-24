@@ -44,6 +44,7 @@ public class C02_WebTable extends TestBaseBeforeAfter {
         /*
         Tabloda <table> tagı altında tablonun baslıgını gosteren <thead> tagı bulunur.
         Eger baslikda satir(row) varsa <thead> tagı altinda <tr> (satır-row) tagı vardır.
+
         Ve baslıkdaki sutunlara yani hucrelere(cell) de <th> tagı ile ulasilir.
         Baslıgın tablodaki verilere <tbody> tagı ile altındaki satırlara(row) <tr> tagı ile sutunlara yani
         hucrelere <td> tagı ile ulasilir.
@@ -58,7 +59,7 @@ public class C02_WebTable extends TestBaseBeforeAfter {
         System.out.println("Tum Body : "+ body.getText());
     }
 
-    private void login() {
+   public void login() {
         driver.get("https://www.hotelmycamp.com/admin/HotelRoomAdmin");
 
         WebElement userName = driver.findElement(By.xpath("//*[@id='UserName']"));
