@@ -3,8 +3,7 @@ package day15;
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.*;
 import utilities.TestBaseBeforeAfter;
 
 import java.io.File;
@@ -26,6 +25,10 @@ public class Odev01 extends TestBaseBeforeAfter {
         File TumSayfaResmi = ts.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(TumSayfaResmi,new File("target/ekranGoruntusu/AllPage"+tarih+".jpeg"));
         // 3- Nutella icin arama yapin
+        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Nutella", Keys.ENTER);
         //4- sonucun Nutella icerdigini test edin ve ilk urunun goruntusunu alin
+        WebElement ilkResim = driver.findElement(By.xpath("//*[@class='a-section aok-relative s-image-square-aspect']"));
+        File nutellaArama = ilkResim.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(nutellaArama,new File("target/ekranGoruntusuWE/WebESS"+tarih+".jpeg"));
     }
 }
